@@ -12,9 +12,13 @@ const loadBooks = () => {
                         <h1>${book.restroname}</h1>
                         <h2>Dish: ${book.dish}</h2>
                         <h3>Food Quantity: ${book.quantity}</h3>
+                        <h4>People Able to Feed: ${book.people}</h4>
                         <h4>Optional Description/Message: ${book.desc}</h4>
                         <p>Time: ${book.time}</p>
-                        <button onclick={twilioSend()}>Remind ME!</button>
+                        <p>Veg: ${book.veg}</p>
+                        <p>NonVeg: ${book.nonveg}</p>
+                        
+                        <button onclick=twilioSend()>Remind ME!</button>
                 </div>
         `
 

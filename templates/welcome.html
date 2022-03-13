@@ -10,7 +10,6 @@
 <body>
 	<div class="userdiv">
 		<h1 class="name">Hi, {{name}}</h1>
-		<hr style="width: 30%">
 		<h3 class="email"> {{email}}</h3>
 		<a href="/"><button type="submit" value="HOME" name="logout" class="fadeIn fourth"
 				onclick="location.href'/';">Logout </button></a>
@@ -23,16 +22,26 @@
 		<div class="dashboard">
 			<h2>Add your Leftover Dishes Here</h2>
 			<form action="http://localhost:3000/book" method="POST">
-				<input type="text" name="restroname" placeholder="Enter your Restuarant Name Here...">
+				<label>Restuarant Name: <input type="text" name="restroname" placeholder="Enter your Restuarant Name Here..."></label>
 
-				<input type="text" name="dish" placeholder="Enter your Dish Here...">
+				<label>Food Name: <input type="text" name="dish" placeholder="Enter your Dish Here..."></label>
 				
-				<input type="text" name="quantity" placeholder="Enter your Dish Quanity in KG Here...">
+				<label>Quantity in KGs: <input type="number" name="quantity" placeholder="Enter your Dish Quanity in KG Here..."></label>
 
-				<input type="text" name="desc" placeholder="Enter any Optional Description Here...">
+				<label>Description if Any: <input type="text" name="desc" placeholder="Enter any Optional Description Here..."></label>
+
+				<label>Able to Feed: <input type="number" name="people" placeholder="Enter how many adults you can feed..."></label>
+				
+				<div class="mealprep">
+					
+					<label>Veg: <input name="veg" type="checkbox"></label>
+
+					<label>Non Veg: <input name="nonveg" type="checkbox"></label>
+				</div>
 
 				<input name="time" type="time">
-				<button type="submit">Submit</button>
+
+				<button type="submit">Add My Restaurant</button>
 			</form>
 		</div>
 	</div>
