@@ -12,34 +12,29 @@
 		<h1 class="name">Hi, {{name}}</h1>
 		<hr style="width: 30%">
 		<h3 class="email"> {{email}}</h3>
-		<a href="/"><button type="submit" value="HOME" name="logout" class="fadeIn fourth" onclick="location.href'/';">
-				Logout </button></a>
+		<a href="/"><button type="submit" value="HOME" name="logout" class="fadeIn fourth"
+				onclick="location.href'/';">Logout </button></a>
 	</div>
 
 	<div class="main">
 		<div class="restrolist">
-			<h2>Eat n Joy Cafe</h2>
-			<p>We have the following dishes available</p>
-			<ul>
-				<li>Chicken Curry</li>
-				<li>Dal</li>
-			</ul>
-			<button>Remind ME!</button>
+			<div class="row" id="books">
+			</div>
+			<button onclick="twilioSend()">Remind ME!</button>
 		</div>
 
 		<div class="dashboard">
 			<h2>Add your Leftover Dishes Here</h2>
-			<form>
-				<input type="text" placeholder="Enter your Dish Here...">
+			<form action="http://localhost:3000/book" method="POST">
+				<input type="text" name="dish" placeholder="Enter your Dish Here...">
 
-				<input type="text" placeholder="Enter your Quanity in KG Here...">
+				<input type="text" name="quantity" placeholder="Enter your Quanity in KG Here...">
 
 				<input type="time">
 				<button type="submit">Submit</button>
 			</form>
 		</div>
 	</div>
-
+	<script src="../index.js"></script>
 </body>
-
 </html>
