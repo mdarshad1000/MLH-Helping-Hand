@@ -13,7 +13,7 @@ warnings.filterwarnings("ignore")
 
 import pickle
 
-data = pd.read_csv('data.csv')
+data = pd.read_csv(r".\ml model\data.csv")
 
 #Model Preparation 
 
