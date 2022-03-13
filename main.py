@@ -1,5 +1,12 @@
 import pyrebase
 from flask import *
+import pickle
+import numpy as np
+from ml_model.model import training_scaler
+
+model = pickle.load(open('model.pkl','rb'))
+
+scaler = training_scaler()
 
 app = Flask(__name__)
 config = {
@@ -92,6 +99,24 @@ def register():
             return redirect(url_for('welcome'))
         else:
             return redirect(url_for('register'))
+
+
+@app.route('/restroml', methods=['GET', 'POST'])
+def restroml():
+    if request.method == "POST":
+        ml = request.form
+        veg_qty = ml["vegquantity"]
+        nonveg_qty = ml["nonvegquantity"]
+        people = ml["people"]
+        pass
+    
+    int_features=[int(veg_qty), int(nonveg_qty), int(people)]
+    user_data = np.array(int_features).reshape((1,-1))
+    user_data_scaled = scaler.transform(user_data)
+    
+    prediction = model.predict(user_data_scaled)
+    return prediction[0]
+
 
 
 if __name__ == "__main__":
