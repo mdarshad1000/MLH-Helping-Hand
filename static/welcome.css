@@ -24,24 +24,24 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 
 .restrolist{
 	display: flex;
-	background-color:white;
+	background-color: rgb(224, 163, 113);
 	flex-direction: column;
 	width: 50%;
-	border: 1px solid black;
 	margin: 1rem;
 	padding: 1rem;
 	justify-content: center;
 	align-items: center;
-	
+	border-radius: 1rem;	
 }
 
 
 .dashboard{
 	display: flex;
-	background-color:white;
+	background-color: rgb(224, 163, 113);
 	flex-direction: column;
 	width: 40%;
-	border: 1px solid black;
+	height: 100vh;
+	border-radius: 1rem;
 	margin: 1rem;
 	padding: 1rem;
 	justify-content: center;
@@ -50,15 +50,21 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 
 .dashboard form{
 	display: flex;
+	margin: 1rem;
+	padding: 1rem;
 	width: 22rem;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	border: 1px solid white;
+	border-radius: 1rem;
 }
 
 form input{
+	
 	margin: 1rem;
 	padding: 0.5rem;
+	border-radius: 0.5rem;
 }
 
 .restrolist button{
@@ -82,5 +88,6 @@ form input{
 	text-align: center;
 	width: 90%;
 	padding: 1rem;
-	border: 1px solid black;
+	border: 1px solid white;
+	border-radius: 1rem;
 }
