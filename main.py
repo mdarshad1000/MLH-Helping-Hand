@@ -2,11 +2,11 @@ import pyrebase
 from flask import *
 import pickle
 import numpy as np
-from ml_model.model import training_scaler
+from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
+import pandas as pd
 
 model = pickle.load(open('model.pkl','rb'))
-
-scaler = training_scaler()
 
 app = Flask(__name__)
 config = {
@@ -110,6 +110,13 @@ def restroml():
         people = ml["people"]
         pass
     
+    data = pd.read_csv('ml_model/data.csv')
+    y = data["Food Wasted"]
+    X = data.drop('Food Wasted',axis=1)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state = 0)
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+
     int_features=[int(veg_qty), int(nonveg_qty), int(people)]
     user_data = np.array(int_features).reshape((1,-1))
     user_data_scaled = scaler.transform(user_data)
