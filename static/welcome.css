@@ -24,6 +24,7 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 
 .restrolist{
 	display: flex;
+	background-color:white;
 	flex-direction: column;
 	width: 50%;
 	border: 1px solid black;
@@ -33,14 +34,14 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 	align-items: center;
 	
 }
-.restrolist button{
-	width: 40%;
-}
+
 
 .dashboard{
 	display: flex;
+	background-color:white;
 	flex-direction: column;
 	width: 40%;
+	height: 90vh;
 	border: 1px solid black;
 	margin: 1rem;
 	padding: 1rem;
@@ -53,5 +54,24 @@ background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
 	height: 100%;
 	width: 40%;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
+}
+
+input{
+	margin: 1rem;
+	padding: 0.5rem;
+	width: 100%;
+}
+
+.restrolist button{
+	width: 60%;
+	height: 2rem;
+}
+
+.card{
+	margin: 1rem;
+	text-align: center;
+	width: 90%;
+	padding: 1rem;
+	border: 1px solid black;
 }

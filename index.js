@@ -8,13 +8,14 @@ const loadBooks = () => {
 
     for (let book of books) {
         const x = `
-            <div class="col-4">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${book.dish}</h5>
-                        <div>Number Of Pages: ${book.quantity}</div>
+                        <h1>${book.restroname}</h1>
+                        <h2>Dish: ${book.dish}</h2>
+                        <h3>Food Quantity: ${book.quantity}</h3>
+                        <h4>Optional Description/Message: ${book.desc}</h4>
+                        <p>Time: ${book.time}</p>
+                        <button onclick={twilioSend()}>Remind ME!</button>
                 </div>
-            </div>
         `
 
         document.getElementById('books').innerHTML = document.getElementById('books').innerHTML + x;

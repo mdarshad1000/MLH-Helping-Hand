@@ -17,20 +17,21 @@
 	</div>
 
 	<div class="main">
-		<div class="restrolist">
-			<div class="row" id="books">
-			</div>
-			<button onclick="twilioSend()">Remind ME!</button>
+		<div class="restrolist" id="books">
 		</div>
 
 		<div class="dashboard">
 			<h2>Add your Leftover Dishes Here</h2>
 			<form action="http://localhost:3000/book" method="POST">
+				<input type="text" name="restroname" placeholder="Enter your Restuarant Name Here...">
+
 				<input type="text" name="dish" placeholder="Enter your Dish Here...">
+				
+				<input type="text" name="quantity" placeholder="Enter your Dish Quanity in KG Here...">
 
-				<input type="text" name="quantity" placeholder="Enter your Quanity in KG Here...">
+				<input type="text" name="desc" placeholder="Enter any Optional Description Here...">
 
-				<input type="time">
+				<input name="time" type="time">
 				<button type="submit">Submit</button>
 			</form>
 		</div>
