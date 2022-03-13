@@ -94,5 +94,17 @@ def register():
             return redirect(url_for('register'))
 
 
+
+@app.route('/restroml', methods=['GET', 'POST'])
+def restroml():
+    if request.method == "POST":
+        ml = request.form
+        veg_qty = ml["vegquantity"]
+        nonveg_qty = ml["nonvegquantity"]
+        people = ml["people"]
+        pass
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
